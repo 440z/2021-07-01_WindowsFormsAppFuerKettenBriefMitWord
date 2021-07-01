@@ -161,6 +161,17 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
 
             //Close this form.
             this.Close();
+
+            //object oTemplate = "c:\\MyTemplate.dot";
+            object oTemplate = @"C:\Users\ITA8-TN04\OneDrive - IT-Akademie Dr. Heuer GmbH\Praktikum\MyTemplate.docx";
+            oDoc = oWord.Documents.Add(ref oTemplate, ref oMissing,
+            ref oMissing, ref oMissing);
+
+            //object oBookMark = "MyBookmark";
+            //oDoc.Bookmarks.Item(ref oBookMark).Range.Text = "Some Text Here";
+
+            //object oStyleName = "MyStyle";
+            //oDoc.Bookmarks.Item(ref oBookMark).Range.set_Style(ref oStyleName);
         }
     }
 }

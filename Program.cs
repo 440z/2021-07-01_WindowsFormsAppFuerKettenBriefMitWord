@@ -18,5 +18,7 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+
+
     }
 }
