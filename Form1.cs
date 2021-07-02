@@ -168,8 +168,9 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             ref oMissing, ref oMissing);
 
             object oBookMark = "MyBookmark";
-            oDoc.Bookmarks.Item(ref oBookMark).Range.Text = "Some Text Here";
-
+            //oDoc.Bookmarks.Item(ref oBookMark).Range.Text = "Some Text Here";
+            oDoc.Bookmarks[ref oBookMark].Range.Text = "Some Text Here";
+            //oDoc.Bookmarks[oBookMark].Range.Text = "Some Text Here";
 
             //object oStyleName = "MyStyle";
             //oDoc.Bookmarks.Item(ref oBookMark).Range.set_Style(ref oStyleName);
