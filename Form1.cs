@@ -162,6 +162,8 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             //Close this form.
             this.Close();
 
+
+
             //object oTemplate = "c:\\MyTemplate.dot";
             object oTemplate = @"C:\Users\ITA8-TN04\OneDrive - IT-Akademie Dr. Heuer GmbH\Praktikum\MyTemplate.docx";
             oDoc = oWord.Documents.Add(ref oTemplate, ref oMissing,
@@ -169,7 +171,12 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
 
             object oBookMark = "MyBookmark";
             //oDoc.Bookmarks.Item(ref oBookMark).Range.Text = "Some Text Here";
-            oDoc.Bookmarks[ref oBookMark].Range.Text = "Some Text Here";
+            //oDoc.Bookmarks[ref oBookMark].Range.Text = "Some Text Here";
+            //oDoc.Bookmarks[ref oBookMark].Range.Text = "endofdoc";
+            oDoc.Bookmarks[ref oBookMark].Range.Text = "What the curse!!!";
+
+            
+
             //oDoc.Bookmarks[oBookMark].Range.Text = "Some Text Here";
             // Stackoverflow: https://stackoverflow.com/questions/68221798/cs1061-bookmarks-does-not-contain-a-definition-for-item?noredirect=1#comment120573044_68221798
 
@@ -180,7 +187,7 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
 
 
             //object oStyleName = "MyStyle";
-            //oWord.Selection.set_Style(ref oStyleName);
+            oWord.Selection.set_Style(ref oStyleName);
 
 
         }
