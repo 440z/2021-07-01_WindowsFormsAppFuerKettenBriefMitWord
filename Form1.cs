@@ -83,6 +83,7 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             oPara4.Format.SpaceAfter = 24;
             oPara4.Range.InsertParagraphAfter();
 
+
             //Insert a 5 x 2 table, fill it with data, and change the column widths.
             wrdRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
             oTable = oDoc.Tables.Add(wrdRng, 5, 2, ref oMissing, ref oMissing);
