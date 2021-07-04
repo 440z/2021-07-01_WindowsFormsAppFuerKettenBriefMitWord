@@ -280,13 +280,13 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
 
 
         /// <summary>
-        /// displays on every start
+        /// displays on every start and seems to be nessesary to run the program
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Form1_Load_1(object sender, EventArgs e)
         {
-            MessageBox.Show("corse you!!");
+            MessageBox.Show("program is running!!");
 
         }
 
