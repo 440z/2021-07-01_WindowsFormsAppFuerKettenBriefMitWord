@@ -88,8 +88,7 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             oPara43.Format.SpaceAfter = 24;
             oPara43.Range.InsertParagraphAfter();
 
-
-
+            
 
 
 
@@ -265,6 +264,9 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
         }
 
 
+
+
+
         string chattextbox = "Show a cursing string";
         public void TextBox1_TextChanged(object sender, EventArgs e)
         {
@@ -293,6 +295,8 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
         private void button2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("corse you!!");
+            
+
         }
     }
 }
