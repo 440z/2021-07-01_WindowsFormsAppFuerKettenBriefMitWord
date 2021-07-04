@@ -54,7 +54,7 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             oPara3 = oDoc.Content.Paragraphs.Add(ref oRng);
             oPara3.Range.Text = "This is a sentence of normal text. Now here is a table:";
             oPara3.Range.Font.Bold = 0;
-            oPara3.Format.SpaceAfter = 24;
+            //oPara3.Format.SpaceAfter = 24;
             oPara3.Range.InsertParagraphAfter();
 
 
@@ -76,7 +76,17 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             oPara42.Range.InsertParagraphAfter();
 
 
-
+            //Insert my additional own paragraph
+            string string1 = "foo";
+            string string2 = "bar";
+            Word.Paragraph oPara43;
+            oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
+            oPara43 = oDoc.Content.Paragraphs.Add(ref oRng);
+            oPara43.Range.Text = "Exactly here: " + string1 + "\n" +
+                "and here: " + string2 + "\n" +
+                "are my strings";
+            oPara43.Format.SpaceAfter = 24;
+            oPara43.Range.InsertParagraphAfter();
 
 
 
@@ -200,58 +210,89 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
 
 
 
-            //object oTemplate = "c:\\MyTemplate.dot";
+            ////object oTemplate = "c:\\MyTemplate.dot";
 
-            //Dr. Heuer
-            //object oTemplate = @"C:\Users\ITA8-TN04\OneDrive - IT-Akademie Dr. Heuer GmbH\Praktikum\MyTemplate.docx";
+            ////Dr. Heuer
+            ////object oTemplate = @"C:\Users\ITA8-TN04\OneDrive - IT-Akademie Dr. Heuer GmbH\Praktikum\MyTemplate.docx";
 
-            //Zu Hause
-            //object oTemplate = @"C:\Users\Windows10\OneDrive - IT-Akademie Dr. Heuer GmbH\Praktikum\MyTemplate.docx";
-            object oTemplate = @"C:\Users\Windows10\OneDrive - IT-Akademie Dr. Heuer GmbH\Formular aus meinem Ordner.docx";
+            ////Zu Hause
+            ////object oTemplate = @"C:\Users\Windows10\OneDrive - IT-Akademie Dr. Heuer GmbH\Praktikum\MyTemplate.docx";
+            //object oTemplate = @"C:\Users\Windows10\OneDrive - IT-Akademie Dr. Heuer GmbH\Formular aus meinem Ordner.docx";
 
 
-            oDoc = oWord.Documents.Add(ref oTemplate, ref oMissing,
-            ref oMissing, ref oMissing);
+            //oDoc = oWord.Documents.Add(ref oTemplate, ref oMissing,
+            //ref oMissing, ref oMissing);
 
-            object oBookMark = "MyBookmark";
-            //oDoc.Bookmarks.Item(ref oBookMark).Range.Text = "Some Text Here";
-            //oDoc.Bookmarks[ref oBookMark].Range.Text = "Some Text Here";
-            //oDoc.Bookmarks[ref oBookMark].Range.Text = "endofdoc";
-            //oDoc.Bookmarks[ref oBookMark].Range.Text = "What the curse!!!";
+            //object oBookMark = "MyBookmark";
+            ////oDoc.Bookmarks.Item(ref oBookMark).Range.Text = "Some Text Here";
+            ////oDoc.Bookmarks[ref oBookMark].Range.Text = "Some Text Here";
+            ////oDoc.Bookmarks[ref oBookMark].Range.Text = "endofdoc";
+            ////oDoc.Bookmarks[ref oBookMark].Range.Text = "What the curse!!!";
 
             
 
-            //oDoc.Bookmarks[oBookMark].Range.Text = "Some Text Here";
-            // Stackoverflow: Frage aus Forum
-
-
-            object oStyleName = "MyStyle";
-            //oDoc.Bookmarks.Item(ref oBookMark).Range.set_Style(ref oStyleName);
-            //oDoc.Bookmarks[ref oBookMark].Range.set_Style(ref oStyleName);
+            ////oDoc.Bookmarks[oBookMark].Range.Text = "Some Text Here";
+            //// Stackoverflow: Frage aus Forum
 
 
             //object oStyleName = "MyStyle";
-            //oWord.Selection.set_Style(ref oStyleName);
+            ////oDoc.Bookmarks.Item(ref oBookMark).Range.set_Style(ref oStyleName);
+            ////oDoc.Bookmarks[ref oBookMark].Range.set_Style(ref oStyleName);
+
+
+            ////object oStyleName = "MyStyle";
+            ////oWord.Selection.set_Style(ref oStyleName);
 
 
 
 
 
-            // Delete old stuff
+            //// Delete old stuff
 
 
 
-            //Insert my additional own paragraph
-            string string1 = "foo";
-            string string2 = "bar";
-            Word.Paragraph oPara43;
-            oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-            oPara43 = oDoc.Content.Paragraphs.Add(ref oRng);
-            oPara43.Range.Text = "Exactly here: " + string1 + "\n" +
-                "and here: " + string2 + "\n" +
-                "are my strings"; 
-            oPara43.Range.InsertParagraphAfter();
+            ////Insert my additional own paragraph
+            //string string1 = "foo";
+            //string string2 = "bar";
+            //Word.Paragraph oPara43;
+            //oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
+            //oPara43 = oDoc.Content.Paragraphs.Add(ref oRng);
+            //oPara43.Range.Text = "Exactly here: " + string1 + "\n" +
+            //    "and here: " + string2 + "\n" +
+            //    "are my strings"; 
+            //oPara43.Range.InsertParagraphAfter();
 
+        }
+
+
+        string chattextbox = "Show a cursing string";
+        public void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+            chattextbox = textBox1.Text;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("The string i stored is: " + chattextbox);
+        }
+
+
+
+        /// <summary>
+        /// displays on every start
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("corse you!!");
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("corse you!!");
         }
     }
 }
