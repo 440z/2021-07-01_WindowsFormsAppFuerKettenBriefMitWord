@@ -201,12 +201,14 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
 
 
             //object oTemplate = "c:\\MyTemplate.dot";
-            
+
             //Dr. Heuer
             //object oTemplate = @"C:\Users\ITA8-TN04\OneDrive - IT-Akademie Dr. Heuer GmbH\Praktikum\MyTemplate.docx";
 
             //Zu Hause
-            object oTemplate = @"C:\Users\Windows10\OneDrive - IT-Akademie Dr. Heuer GmbH\Praktikum\MyTemplate.docx";
+            //object oTemplate = @"C:\Users\Windows10\OneDrive - IT-Akademie Dr. Heuer GmbH\Praktikum\MyTemplate.docx";
+            object oTemplate = @"C:\Users\Windows10\OneDrive - IT-Akademie Dr. Heuer GmbH\Formular aus meinem Ordner.docx";
+
 
             oDoc = oWord.Documents.Add(ref oTemplate, ref oMissing,
             ref oMissing, ref oMissing);
@@ -241,8 +243,7 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             oPara43.Range.Text = "Insert my own paragraph.      " +
                 "An other line of text" +
                 "\n" +
-                "Wie macht man einen Zeilenumbruch der nicht 3cm hoch ist?"; // ??? Wie macht man einen Zeilenumbruch?
-            //oPara42.Range.Text = "An other line of text";
+                "Wie macht man einen Zeilenumbruch der nicht 3cm hoch ist?"; 
             oPara43.Range.InsertParagraphAfter();
 
         }
