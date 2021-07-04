@@ -222,7 +222,7 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             
 
             //oDoc.Bookmarks[oBookMark].Range.Text = "Some Text Here";
-            // Stackoverflow: https://stackoverflow.com/questions/68221798/cs1061-bookmarks-does-not-contain-a-definition-for-item?noredirect=1#comment120573044_68221798
+            // Stackoverflow: Frage aus Forum
 
 
             object oStyleName = "MyStyle";
@@ -236,14 +236,20 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
 
 
 
-            //Insert my own paragraph
+
+            // Delete old stuff
+
+
+
+            //Insert my additional own paragraph
+            string string1 = "foo";
+            string string2 = "bar";
             Word.Paragraph oPara43;
             oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
             oPara43 = oDoc.Content.Paragraphs.Add(ref oRng);
-            oPara43.Range.Text = "Insert my own paragraph.      " +
-                "An other line of text" +
-                "\n" +
-                "Wie macht man einen Zeilenumbruch der nicht 3cm hoch ist?"; 
+            oPara43.Range.Text = "Exactly here: " + string1 + "\n" +
+                "and here: " + string2 + "\n" +
+                "are may strings"; 
             oPara43.Range.InsertParagraphAfter();
 
         }
