@@ -59,14 +59,33 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
 
 
 
+
+
+
+
+
             //Insert my own paragraph
             Word.Paragraph oPara42;
             oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
             oPara42 = oDoc.Content.Paragraphs.Add(ref oRng);
-            oPara42.Range.Text = "Insert my own paragraph. /n" +
-                "An other line of text"; // ??? Wie macht man einen Abstatz?
+            oPara42.Range.Text = "Insert my own paragraph.      " +
+                "An other line of text" +
+                "\n" +
+                "Wie macht man einen Zeilenumbruch der nicht 3cm hoch ist?"; // ??? Wie macht man einen Zeilenumbruch?
             //oPara42.Range.Text = "An other line of text";
             oPara42.Range.InsertParagraphAfter();
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -134,45 +153,45 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             wrdRng.InsertAfter("We're now on page 2. Here's my chart:");
             wrdRng.InsertParagraphAfter();
 
-            //Insert a chart.
-            Word.InlineShape oShape;
-            object oClassType = "MSGraph.Chart.8";
-            wrdRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-            oShape = wrdRng.InlineShapes.AddOLEObject(ref oClassType, ref oMissing,
-            ref oMissing, ref oMissing, ref oMissing,
-            ref oMissing, ref oMissing, ref oMissing);
+            ////Insert a chart.
+            //Word.InlineShape oShape;
+            //object oClassType = "MSGraph.Chart.8";
+            //wrdRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
+            //oShape = wrdRng.InlineShapes.AddOLEObject(ref oClassType, ref oMissing,
+            //ref oMissing, ref oMissing, ref oMissing,
+            //ref oMissing, ref oMissing, ref oMissing);
 
-            //Demonstrate use of late bound oChart and oChartApp objects to
-            //manipulate the chart object with MSGraph.
-            object oChart;
-            object oChartApp;
-            oChart = oShape.OLEFormat.Object;
-            oChartApp = oChart.GetType().InvokeMember("Application",
-            BindingFlags.GetProperty, null, oChart, null);
+            ////Demonstrate use of late bound oChart and oChartApp objects to
+            ////manipulate the chart object with MSGraph.
+            //object oChart;
+            //object oChartApp;
+            //oChart = oShape.OLEFormat.Object;
+            //oChartApp = oChart.GetType().InvokeMember("Application",
+            //BindingFlags.GetProperty, null, oChart, null);
 
-            //Change the chart type to Line.
-            object[] Parameters = new Object[1];
-            Parameters[0] = 4; //xlLine = 4
-            oChart.GetType().InvokeMember("ChartType", BindingFlags.SetProperty,
-            null, oChart, Parameters);
+            ////Change the chart type to Line.
+            //object[] Parameters = new Object[1];
+            //Parameters[0] = 4; //xlLine = 4
+            //oChart.GetType().InvokeMember("ChartType", BindingFlags.SetProperty,
+            //null, oChart, Parameters);
 
-            //Update the chart image and quit MSGraph.
-            oChartApp.GetType().InvokeMember("Update",
-            BindingFlags.InvokeMethod, null, oChartApp, null);
-            oChartApp.GetType().InvokeMember("Quit",
-            BindingFlags.InvokeMethod, null, oChartApp, null);
-            //... If desired, you can proceed from here using the Microsoft Graph 
-            //Object model on the oChart and oChartApp objects to make additional
-            //changes to the chart.
+            ////Update the chart image and quit MSGraph.
+            //oChartApp.GetType().InvokeMember("Update",
+            //BindingFlags.InvokeMethod, null, oChartApp, null);
+            //oChartApp.GetType().InvokeMember("Quit",
+            //BindingFlags.InvokeMethod, null, oChartApp, null);
+            ////... If desired, you can proceed from here using the Microsoft Graph 
+            ////Object model on the oChart and oChartApp objects to make additional
+            ////changes to the chart.
 
-            //Set the width of the chart.
-            oShape.Width = oWord.InchesToPoints(6.25f);
-            oShape.Height = oWord.InchesToPoints(3.57f);
+            ////Set the width of the chart.
+            //oShape.Width = oWord.InchesToPoints(6.25f);
+            //oShape.Height = oWord.InchesToPoints(3.57f);
 
-            //Add text after the chart.
-            wrdRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-            wrdRng.InsertParagraphAfter();
-            wrdRng.InsertAfter("THE END.");
+            ////Add text after the chart.
+            //wrdRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
+            //wrdRng.InsertParagraphAfter();
+            //wrdRng.InsertAfter("THE END.");
 
             //Close this form.
             this.Close();
