@@ -249,7 +249,7 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             oPara43 = oDoc.Content.Paragraphs.Add(ref oRng);
             oPara43.Range.Text = "Exactly here: " + string1 + "\n" +
                 "and here: " + string2 + "\n" +
-                "are may strings"; 
+                "are my strings"; 
             oPara43.Range.InsertParagraphAfter();
 
         }
