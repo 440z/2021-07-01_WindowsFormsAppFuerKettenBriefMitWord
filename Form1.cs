@@ -145,6 +145,8 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
                                        (Word.WdInformation.wdVerticalPositionRelativeToPage);
             }
             while (dPos >= Convert.ToDouble(oPos));
+
+
             object oCollapseEnd = Word.WdCollapseDirection.wdCollapseEnd;
             object oPageBreak = Word.WdBreakType.wdPageBreak;
             wrdRng.Collapse(ref oCollapseEnd);
@@ -213,7 +215,7 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             //oDoc.Bookmarks.Item(ref oBookMark).Range.Text = "Some Text Here";
             //oDoc.Bookmarks[ref oBookMark].Range.Text = "Some Text Here";
             //oDoc.Bookmarks[ref oBookMark].Range.Text = "endofdoc";
-            oDoc.Bookmarks[ref oBookMark].Range.Text = "What the curse!!!";
+            //oDoc.Bookmarks[ref oBookMark].Range.Text = "What the curse!!!";
 
             
 
@@ -223,12 +225,25 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
 
             object oStyleName = "MyStyle";
             //oDoc.Bookmarks.Item(ref oBookMark).Range.set_Style(ref oStyleName);
-            oDoc.Bookmarks[ref oBookMark].Range.set_Style(ref oStyleName);
+            //oDoc.Bookmarks[ref oBookMark].Range.set_Style(ref oStyleName);
 
 
             //object oStyleName = "MyStyle";
-            oWord.Selection.set_Style(ref oStyleName);
+            //oWord.Selection.set_Style(ref oStyleName);
 
+
+
+
+            //Insert my own paragraph
+            Word.Paragraph oPara43;
+            oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
+            oPara43 = oDoc.Content.Paragraphs.Add(ref oRng);
+            oPara43.Range.Text = "Insert my own paragraph.      " +
+                "An other line of text" +
+                "\n" +
+                "Wie macht man einen Zeilenumbruch der nicht 3cm hoch ist?"; // ??? Wie macht man einen Zeilenumbruch?
+            //oPara42.Range.Text = "An other line of text";
+            oPara43.Range.InsertParagraphAfter();
 
         }
     }
