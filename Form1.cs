@@ -57,6 +57,19 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             oPara3.Format.SpaceAfter = 24;
             oPara3.Range.InsertParagraphAfter();
 
+
+
+            //Insert my own paragraph
+            Word.Paragraph oPara42;
+            oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
+            oPara42 = oDoc.Content.Paragraphs.Add(ref oRng);
+            oPara42.Range.Text = "Insert my own paragraph. /n" +
+                "An other line of text"; // ??? Wie macht man einen Abstatz?
+            //oPara42.Range.Text = "An other line of text";
+            oPara42.Range.InsertParagraphAfter();
+
+
+
             //Insert a 3 x 5 table, fill it with data, and make the first row
             //bold and italic.
             Word.Table oTable;
@@ -100,7 +113,8 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             //Keep inserting text. When you get to 7 inches from top of the
             //document, insert a hard page break.
             object oPos;
-            double dPos = oWord.InchesToPoints(7);
+            //double dPos = oWord.InchesToPoints(7);
+            double dPos = oWord.InchesToPoints(10);
             oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range.InsertParagraphAfter();
             do
             {
@@ -166,7 +180,13 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
 
 
             //object oTemplate = "c:\\MyTemplate.dot";
-            object oTemplate = @"C:\Users\ITA8-TN04\OneDrive - IT-Akademie Dr. Heuer GmbH\Praktikum\MyTemplate.docx";
+            
+            //Dr. Heuer
+            //object oTemplate = @"C:\Users\ITA8-TN04\OneDrive - IT-Akademie Dr. Heuer GmbH\Praktikum\MyTemplate.docx";
+
+            //Zu Hause
+            object oTemplate = @"C:\Users\Windows10\OneDrive - IT-Akademie Dr. Heuer GmbH\Praktikum\MyTemplate.docx";
+
             oDoc = oWord.Documents.Add(ref oTemplate, ref oMissing,
             ref oMissing, ref oMissing);
 
