@@ -81,8 +81,6 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             //string string2 = "bar";
             string string1 = textBox1.Text;
             string string2 = textBox2.Text;
-            string string11 = textBox1.Text;
-            string string12 = textBox2.Text;
             Word.Paragraph oPara43;
             oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
             oPara43 = oDoc.Content.Paragraphs.Add(ref oRng);
@@ -230,8 +228,7 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
 
             object oBookMark = "MyBookmark";
             //oDoc.Bookmarks.Item(ref oBookMark).Range.Text = "Some Text Here";
-            //oDoc.Bookmarks[ref oBookMark].Range.Text = "Some Text Here";
-            //oDoc.Bookmarks[ref oBookMark].Range.Text = "endofdoc";
+            oDoc.Bookmarks[ref oBookMark].Range.Text = "Some Text Here";
             //oDoc.Bookmarks[ref oBookMark].Range.Text = "What the curse!!!";
 
 
@@ -240,8 +237,8 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             // Stackoverflow: Frage aus Forum
 
 
-            object oStyleName = "MyStyle";
-            //oDoc.Bookmarks.Item(ref oBookMark).Range.set_Style(ref oStyleName);
+            //object oStyleName = "MyStyle";
+            ////oDoc.Bookmarks.Item(ref oBookMark).Range.set_Style(ref oStyleName);
             //oDoc.Bookmarks[ref oBookMark].Range.set_Style(ref oStyleName);
 
 
