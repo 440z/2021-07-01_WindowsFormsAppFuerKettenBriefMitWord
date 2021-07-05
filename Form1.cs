@@ -267,36 +267,36 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
 
 
 
-        string chattextbox = "Show a cursing string";
-        public void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-            chattextbox = textBox1.Text;
-        }
+        
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            MessageBox.Show("The string i stored is: " + chattextbox);
-        }
-
+        
 
 
         /// <summary>
-        /// displays on every start and seems to be nessesary to run the program
+        /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Form1_Load_1(object sender, EventArgs e)
         {
-            MessageBox.Show("program is running!!");
+            //MessageBox.Show("program is running!!");
+            
+
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("corse you!!");
-            
+            string inhaltTextbox;
+            inhaltTextbox = textBox1.Text;
+            MessageBox.Show(inhaltTextbox);
+        }
 
+        
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+       
         }
     }
 }
