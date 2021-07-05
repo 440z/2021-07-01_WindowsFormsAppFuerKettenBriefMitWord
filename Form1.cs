@@ -78,8 +78,11 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
 
             //Insert my additional own paragraph
             //string string1 = "foo";
+            //string string2 = "bar";
             string string1 = textBox1.Text;
             string string2 = textBox2.Text;
+            string string11 = textBox1.Text;
+            string string12 = textBox2.Text;
             Word.Paragraph oPara43;
             oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
             oPara43 = oDoc.Content.Paragraphs.Add(ref oRng);
@@ -206,7 +209,7 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             //wrdRng.InsertAfter("THE END.");
 
             //Close this form.
-            this.Close();
+            //this.Close();
 
 
 
@@ -214,40 +217,37 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
 
             ////Dr. Heuer
             ////object oTemplate = @"C:\Users\ITA8-TN04\OneDrive - IT-Akademie Dr. Heuer GmbH\Praktikum\MyTemplate.docx";
+            object oTemplate = @"C:\Users\ITA8-TN04\OneDrive - IT-Akademie Dr. Heuer GmbH\Formular aus meinem Ordner.docx";
+
 
             ////Zu Hause
             ////object oTemplate = @"C:\Users\Windows10\OneDrive - IT-Akademie Dr. Heuer GmbH\Praktikum\MyTemplate.docx";
-            //object oTemplate = @"C:\Users\Windows10\OneDrive - IT-Akademie Dr. Heuer GmbH\Formular aus meinem Ordner.docx";
+            ////object oTemplate = @"C:\Users\Windows10\OneDrive - IT-Akademie Dr. Heuer GmbH\Formular aus meinem Ordner.docx";
 
 
-            //oDoc = oWord.Documents.Add(ref oTemplate, ref oMissing,
-            //ref oMissing, ref oMissing);
+            oDoc = oWord.Documents.Add(ref oTemplate, ref oMissing,
+            ref oMissing, ref oMissing);
 
-            //object oBookMark = "MyBookmark";
-            ////oDoc.Bookmarks.Item(ref oBookMark).Range.Text = "Some Text Here";
-            ////oDoc.Bookmarks[ref oBookMark].Range.Text = "Some Text Here";
-            ////oDoc.Bookmarks[ref oBookMark].Range.Text = "endofdoc";
-            ////oDoc.Bookmarks[ref oBookMark].Range.Text = "What the curse!!!";
+            object oBookMark = "MyBookmark";
+            //oDoc.Bookmarks.Item(ref oBookMark).Range.Text = "Some Text Here";
+            //oDoc.Bookmarks[ref oBookMark].Range.Text = "Some Text Here";
+            //oDoc.Bookmarks[ref oBookMark].Range.Text = "endofdoc";
+            //oDoc.Bookmarks[ref oBookMark].Range.Text = "What the curse!!!";
 
-            
 
-            ////oDoc.Bookmarks[oBookMark].Range.Text = "Some Text Here";
-            //// Stackoverflow: Frage aus Forum
+
+            //oDoc.Bookmarks[oBookMark].Range.Text = "Some Text Here";
+            // Stackoverflow: Frage aus Forum
+
+
+            object oStyleName = "MyStyle";
+            //oDoc.Bookmarks.Item(ref oBookMark).Range.set_Style(ref oStyleName);
+            //oDoc.Bookmarks[ref oBookMark].Range.set_Style(ref oStyleName);
 
 
             //object oStyleName = "MyStyle";
-            ////oDoc.Bookmarks.Item(ref oBookMark).Range.set_Style(ref oStyleName);
-            ////oDoc.Bookmarks[ref oBookMark].Range.set_Style(ref oStyleName);
+            //oWord.Selection.set_Style(ref oStyleName);
 
-
-            ////object oStyleName = "MyStyle";
-            ////oWord.Selection.set_Style(ref oStyleName);
-
-
-
-
-
-            //// Delete old stuff
 
 
 
@@ -262,15 +262,29 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             //    "are my strings"; 
             //oPara43.Range.InsertParagraphAfter();
 
+            string string32 = textBox1.Text;
+            string string42 = textBox2.Text;
+            Word.Paragraph oPara44;
+            oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
+            oPara44 = oDoc.Content.Paragraphs.Add(ref oRng);
+            oPara44.Range.Text = "Exactly here: " + string32 + "\n" +
+                "and here: " + string42 + "\n" +
+                "are my strings";
+            oPara44.Format.SpaceAfter = 24;
+            oPara44.Range.InsertParagraphAfter();
+
+            this.Close();
+
+
         }
 
 
 
 
 
-        
 
-        
+
+
 
 
         /// <summary>
