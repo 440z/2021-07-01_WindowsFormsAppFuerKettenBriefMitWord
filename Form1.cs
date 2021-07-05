@@ -77,8 +77,9 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
 
 
             //Insert my additional own paragraph
-            string string1 = "foo";
-            string string2 = "bar";
+            //string string1 = "foo";
+            string string1 = textBox1.Text;
+            string string2 = textBox2.Text;
             Word.Paragraph oPara43;
             oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
             oPara43 = oDoc.Content.Paragraphs.Add(ref oRng);
@@ -290,6 +291,7 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             string inhaltTextbox;
             inhaltTextbox = textBox1.Text;
             MessageBox.Show(inhaltTextbox);
+            
         }
 
         
@@ -297,6 +299,18 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
        
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string inhaltTextbox;
+            inhaltTextbox = textBox2.Text;
+            MessageBox.Show(inhaltTextbox);
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
