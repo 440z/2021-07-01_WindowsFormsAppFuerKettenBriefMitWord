@@ -215,12 +215,12 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
 
             ////Dr. Heuer
             ////object oTemplate = @"C:\Users\ITA8-TN04\OneDrive - IT-Akademie Dr. Heuer GmbH\Praktikum\MyTemplate.docx";
-            object oTemplate = @"C:\Users\ITA8-TN04\OneDrive - IT-Akademie Dr. Heuer GmbH\Formular aus meinem Ordner.docx";
+            //object oTemplate = @"C:\Users\ITA8-TN04\OneDrive - IT-Akademie Dr. Heuer GmbH\Formular aus meinem Ordner.docx";
 
 
             ////Zu Hause
             ////object oTemplate = @"C:\Users\Windows10\OneDrive - IT-Akademie Dr. Heuer GmbH\Praktikum\MyTemplate.docx";
-            ////object oTemplate = @"C:\Users\Windows10\OneDrive - IT-Akademie Dr. Heuer GmbH\Formular aus meinem Ordner.docx";
+            object oTemplate = @"C:\Users\Windows10\OneDrive - IT-Akademie Dr. Heuer GmbH\Formular aus meinem Ordner.docx";
 
 
             oDoc = oWord.Documents.Add(ref oTemplate, ref oMissing,
@@ -228,7 +228,13 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
 
             object oBookMark = "MyBookmark";
             //oDoc.Bookmarks.Item(ref oBookMark).Range.Text = "Some Text Here";
-            oDoc.Bookmarks[ref oBookMark].Range.Text = "Some Text Here";
+            //oDoc.Bookmarks[ref oBookMark].Range.Text = "Some Text Here";
+            oDoc.Bookmarks[ref oBookMark].Range.Text = "Formular aus meinem Ordner";
+
+            
+            //System.Runtime.InteropServices.COMException: "Das angeforderte Element ist nicht in der Sammlung vorhanden."
+            // Warum ist die auf deutsch?!?!!?
+
             //oDoc.Bookmarks[ref oBookMark].Range.Text = "What the curse!!!";
 
 
@@ -267,7 +273,7 @@ namespace _2021_07_01_WindowsFormsAppFuerKettenBriefMitWord
             oPara44.Range.Text = "Exactly here: " + string32 + "\n" +
                 "and here: " + string42 + "\n" +
                 "are my strings";
-            oPara44.Format.SpaceAfter = 24;
+            //oPara44.Format.SpaceAfter = 24;
             oPara44.Range.InsertParagraphAfter();
 
             this.Close();
